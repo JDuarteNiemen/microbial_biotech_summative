@@ -1,0 +1,5 @@
+,Non-linear estimates,,Lineweaver-Burke estimates,
+Growth curve,Ks,mmax,Ks,mmax
+Original ,3.049,1.008,3.007,1.031
+20 % error at 0.5 mM Glucose,2.856,0.984,3.72,0.833
+20 % error at 7 mM Glucose,4.592,1.269,2.852,1.087

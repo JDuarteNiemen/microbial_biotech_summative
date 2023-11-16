@@ -1,0 +1,111 @@
+---
+title: "Microbial Biotech Formative"
+output:
+  pdf_document: default
+  html_document: default
+date: "2023-10-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+``` {r source, include=FALSE}
+source("scripts/microbial_biotech_formative.R")
+
+```
+# Part A 
+## 1.
+  a)  u=0.35
+  b)  doubling time = 1.98 (doubles every 30mins)
+  
+``` {r, question 1 part a graph, echo=FALSE, warning=FALSE, message=FALSE, fig.asp = 0.5, fig.width = 7, out.width = "75%"}
+
+print(growth_rate_graph)
+
+```
+
+## 2.
+``` {r, yield table, echo=FALSE}
+print(yield_table)
+
+```
+
+## 3.
+The yields tell us that the reaction produces high amounts of Acetate whilst producing relative low amount of bacterial biomass. Most of the Acetate product is produced in the stationary phase alluding that this is a secondary metabolite, as little is produced during exponential phase, the Acetate isnt growth dependent.
+
+# Part B
+
+## 1.
+``` {r, ks and umax, echo=FALSE, message=FALSE, fig.asp = 0.5, fig.width = 7, out.width = "75%"}
+
+
+print(nls_monod_graph)
+
+cat("Estimated umax:", estimated_umax, "\n")
+cat("Estimated ks:", estimated_ks, "\n")
+
+```
+
+## 2.
+``` {r, lineweaverburke, echo=FALSE, message=FALSE, fig.asp = 0.5, fig.width = 7, out.width = "75%"}
+
+print(lwbpg)
+
+cat("Estimated umax calculated from lineweaver-burke:", lwbumax)
+cat("Estimated Ks calculated from linewaever-burke:", lwbks)
+
+```
+
+## 3.
+``` {r, q3, echo=FALSE, message=FALSE}
+
+cat("Estimated Non-linear umax:", estimated_umax_3, "\n")
+cat("Estimated Non-linear ks:", estimated_ks_3, "\n")
+
+cat("Estimated lineweaver-burke umax:", lwbumax_3, "\n")
+cat("Estimated lineweaver-burke Ks:", lwbks_3, "\n")
+
+```
+
+
+## 4.
+``` {r, q4, echo=FALSE, message=FALSE}
+
+cat("Estimated Non-linear umax:", estimated_umax_4, "\n")
+cat("Estimated Non-linear ks:", estimated_ks_4, "\n")
+
+cat("Estimated lineweaver-burke umax:", lwbumax_4, "\n")
+cat("Estimated lineweaver-burke Ks:", lwbks_4, "\n")
+
+
+```
+
+## 5.
+``` {r, estimate table, echo=FALSE, message=FALSE}
+
+
+knitr::include_graphics("data/estimates.png")
+
+
+```
+
+## 6.
+
+The Error has caused a change in calculated Ks and umax values for both the Non-linear and lineweaver-burke calculations. In the growth rate error measurement, you would expect to see an increase in Ks as the growth rate increases, meaning that the bacteria may have a higher affinity for glucose. At low concentrations this is reflected in the lineweaver-burke but not the non-linear calculation however the opposite is true when the error occurs at higher glucose concentrations.
+For the umax calculations, the non-linear calculations appear to be more accurate of what you would expect to happen, when growth rate increases you would expect the umax to also increase, which the non-linear calculations demonstrate more than the lineweaver-burke does.
+
+
+## 7.
+No, glucose is not the limiting nutrient, as glucose levels increase, growth rate does not increase at the same rate and eventually begins to plateau, highlighting that there is another nutrient that is needed to allow growth rate to carry on increasing.
+
+
+# Part C
+## 1)
+Optimal biomass yield = dilution rate of 0.2 h^-1 producing biomass yield of 0.352g/mol
+
+## 2)
+0.2=F/1000
+0.2x1000=F
+F=200l/h
